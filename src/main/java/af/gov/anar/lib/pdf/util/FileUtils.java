@@ -4,7 +4,6 @@ import af.gov.anar.lib.pdf.exception.*;
 import af.gov.anar.lib.pdf.exception.FileNotFoundException;
 import af.gov.anar.lib.pdf.exception.IOException;
 import af.gov.anar.lib.pdf.exception.UnsupportedEncodingException;
-import af.gov.anar.lib.pdf.exception.common.*;
 import org.apache.commons.io.LineIterator;
 import org.apache.commons.io.filefilter.IOFileFilter;
 
