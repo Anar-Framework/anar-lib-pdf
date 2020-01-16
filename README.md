@@ -17,8 +17,7 @@
 anar.lib.pdf.pdf_owner_password=badar1235 
 ```
 
-This is when you want to add a password to your generated PDF file. 
-In case you want it to be public just set empty. 
+If password is null or empty, PDF will not be encrypted.
 
 #### Documentation
 
