@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 /**
  * Signals that an error has been reached unexpectedly while parsing.

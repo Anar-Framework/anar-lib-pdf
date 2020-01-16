@@ -1,7 +1,8 @@
-package af.gov.anar.lib.pdf.core;
+package af.gov.anar.lib.pdf;
 
-import af.gov.anar.lib.pdf.exception.pdfgenerator.exception.PDFGeneratorException;
-import af.gov.anar.lib.pdf.exception.pdfgenerator.spi.PDFGenerator;
+import af.gov.anar.lib.pdf.exception.PDFGeneratorException;
+import af.gov.anar.lib.pdf.util.EmptyCheckUtils;
+import af.gov.anar.lib.pdf.util.PDFGeneratorExceptionCodeConstant;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.css.media.MediaDeviceDescription;

@@ -1,6 +1,5 @@
-package af.gov.anar.lib.pdf.exception.pdfgenerator.exception;
+package af.gov.anar.lib.pdf.exception;
 
-import af.asr.pdfgenerator.exception.common.BaseUncheckedException;
 
 public class PDFGeneratorException extends BaseUncheckedException {
 

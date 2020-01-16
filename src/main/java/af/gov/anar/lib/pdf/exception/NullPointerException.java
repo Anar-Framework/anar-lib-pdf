@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 /**
  * Exception to be thrown when a null argument found.

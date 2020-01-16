@@ -1,9 +1,10 @@
 package af.gov.anar.lib.pdf.util;
 
+import af.gov.anar.lib.pdf.exception.*;
+import af.gov.anar.lib.pdf.exception.FileNotFoundException;
+import af.gov.anar.lib.pdf.exception.IOException;
+import af.gov.anar.lib.pdf.exception.UnsupportedEncodingException;
 import af.gov.anar.lib.pdf.exception.common.*;
-import af.gov.anar.lib.pdf.exception.common.FileNotFoundException;
-import af.gov.anar.lib.pdf.exception.common.IOException;
-import af.gov.anar.lib.pdf.exception.common.UnsupportedEncodingException;
 import org.apache.commons.io.LineIterator;
 import org.apache.commons.io.filefilter.IOFileFilter;
 
@@ -63,10 +64,10 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.checksum(file, checksum);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -88,10 +89,10 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.checksumCRC32(file);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -111,7 +112,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.cleanDirectory(directory);
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -187,7 +188,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.copyDirectory(srcDir, destDir);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -211,7 +212,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.copyFile(srcFile, destFile);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -233,7 +234,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.copyFile(input, output);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -294,7 +295,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.deleteDirectory(directory);
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -328,7 +329,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.directoryContains(directory, child);
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -348,7 +349,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.forceDelete(file);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.FileNotFoundException e) {
             throw new FileNotFoundException(FileUtilConstants.FILE_NOT_FOUND_ERROR_CODE.getErrorCode(),
@@ -370,7 +371,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.forceDeleteOnExit(file);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -411,7 +412,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.isFileNewer(file, date);
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         }
 
@@ -429,7 +430,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.isFileOlder(file, date);
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         }
     }
@@ -546,7 +547,7 @@ public class FileUtils {
             throw new FileExistsException(FileUtilConstants.FILE_EXISTS_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.FILE_EXISTS_ERROR_CODE.getMessage(), e.getCause());
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -574,7 +575,7 @@ public class FileUtils {
             throw new FileExistsException(FileUtilConstants.FILE_EXISTS_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.FILE_EXISTS_ERROR_CODE.getMessage(), e.getCause());
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -599,7 +600,7 @@ public class FileUtils {
             throw new FileExistsException(FileUtilConstants.FILE_EXISTS_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.FILE_EXISTS_ERROR_CODE.getMessage(), e.getCause());
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -627,7 +628,7 @@ public class FileUtils {
             throw new FileExistsException(FileUtilConstants.FILE_EXISTS_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.FILE_EXISTS_ERROR_CODE.getMessage(), e.getCause());
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -655,7 +656,7 @@ public class FileUtils {
             throw new FileExistsException(FileUtilConstants.FILE_EXISTS_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.FILE_EXISTS_ERROR_CODE.getMessage(), e.getCause());
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -821,10 +822,10 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.sizeOf(file);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         }
 
@@ -841,7 +842,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.sizeOfDirectory(directory);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         }
 
@@ -870,7 +871,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.toFiles(urls);
         } catch (IllegalArgumentException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.IllegalArgumentException(FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.ILLEGAL_ARGUMENT_ERROR_CODE.getMessage(), e.getCause());
         }
 
@@ -889,7 +890,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.toURLs(files);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         } catch (java.io.IOException e) {
             throw new IOException(FileUtilConstants.IO_ERROR_CODE.getErrorCode(),
@@ -909,7 +910,7 @@ public class FileUtils {
         try {
             return org.apache.commons.io.FileUtils.waitFor(file, seconds);
         } catch (NullPointerException e) {
-            throw new af.gov.anar.lib.pdf.exception.common.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
+            throw new af.gov.anar.lib.pdf.exception.NullPointerException(FileUtilConstants.NULL_POINTER_ERROR_CODE.getErrorCode(),
                     FileUtilConstants.NULL_POINTER_ERROR_CODE.getMessage(), e.getCause());
         }
 

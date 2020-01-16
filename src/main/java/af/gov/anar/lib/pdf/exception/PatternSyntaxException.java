@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 /**
  * Unchecked exception thrown to indicate a syntax error in a regular-expression

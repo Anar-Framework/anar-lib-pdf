@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 /**
  * Base class for arithmetic exceptions.

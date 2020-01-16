@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

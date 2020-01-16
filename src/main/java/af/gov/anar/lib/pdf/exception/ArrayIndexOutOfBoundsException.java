@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 /**
  * Thrown to indicate that an array has been accessed with an illegal index. The

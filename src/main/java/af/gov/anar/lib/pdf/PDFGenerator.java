@@ -1,4 +1,4 @@
-package af.gov.anar.lib.pdf.exception.pdfgenerator.spi;
+package af.gov.anar.lib.pdf;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

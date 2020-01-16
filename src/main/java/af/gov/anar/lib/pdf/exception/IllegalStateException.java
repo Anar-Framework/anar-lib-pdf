@@ -5,7 +5,7 @@
  * 
  * 
  */
-package af.gov.anar.lib.pdf.exception.common;
+package af.gov.anar.lib.pdf.exception;
 
 /**
  * Exception to be thrown when date format in filename pattern is wrong
