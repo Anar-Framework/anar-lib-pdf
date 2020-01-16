@@ -39,13 +39,13 @@ import java.util.List;
 public class PDFGeneratorImpl implements PDFGenerator {
     private static final String OUTPUT_FILE_EXTENSION = ".pdf";
 
-    @Value("${mosip.kernel.pdf_owner_password}")
+    @Value("${anar.lib.pdf.pdf_owner_password}")
     private String pdfOwnerPassword;
 
     /*
      * (non-Javadoc)
      *
-     * @see io.mosip.kernel.core.pdfgenerator.spi.PDFGenerator#generate(java.io.
+     * @see .PDFGenerator#generate(java.io.
      * InputStream)
      */
     @Override
@@ -65,7 +65,7 @@ public class PDFGeneratorImpl implements PDFGenerator {
      * (non-Javadoc)
      *
      * @see
-     * io.mosip.kernel.core.pdfgenerator.spi.PDFGenerator#generate(java.lang.String)
+     * PDFGenerator#generate(java.lang.String)
      */
     @Override
     public OutputStream generate(String template) throws IOException {
@@ -83,7 +83,7 @@ public class PDFGeneratorImpl implements PDFGenerator {
      * (non-Javadoc)
      *
      * @see
-     * io.mosip.kernel.core.pdfgenerator.spi.PDFGenerator#generate(java.lang.String,
+     * PDFGenerator#generate(java.lang.String,
      * java.lang.String, java.lang.String)
      */
     @Override
@@ -101,7 +101,7 @@ public class PDFGeneratorImpl implements PDFGenerator {
     /*
      * (non-Javadoc)
      *
-     * @see io.mosip.kernel.core.pdfgenerator.spi.PDFGenerator#generate(java.io.
+     * @see PDFGenerator#generate(java.io.
      * InputStream, java.lang.String)
      */
     @Override
