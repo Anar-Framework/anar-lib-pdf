@@ -22,7 +22,7 @@
 		<bouncycastle.version>1.60</bouncycastle.version>
 		<jackson.databind.version>2.10.1</jackson.databind.version>
 		<xmlworker.version>5.5.13.1</xmlworker.version>
-		<junit.version>4.13-rc-2</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<common-io.version>2.6</common-io.version>
 	</properties>
 
